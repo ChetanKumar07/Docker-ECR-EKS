@@ -3,16 +3,16 @@ pipeline {
    environment 
     {
         VERSION = "${BUILD_NUMBER}"
-        PROJECT = 'nodeapp'
+        PROJECT = 'eks-demo'
         IMAGE = "$PROJECT:$VERSION"
-        ECRURL = 'https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/nodeapp'
+        ECRURL = 'https://531359658382.dkr.ecr.ap-south-1.amazonaws.com/eks-demo'
         ECRCRED = 'ecr:ap-south-1:AWS_ECR'
     }   
     stages {
       stage('GetSCM') {
          steps {
             // Get some code from a GitHub repository
-            git 'https://github.com/ChetanKumar07/Docker-ECR.git'
+            git 'https://github.com/ChetanKumar07/Docker-ECR-EKS.git'
          }
          }
          stage('Image Build'){
