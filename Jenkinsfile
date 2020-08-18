@@ -38,8 +38,8 @@ pipeline {
         sshagent(['root-user1']){
             sh "ssh -o StrictHostKeyChecking=no root@13.126.194.4"
             sh "eksctl create cluster -f cluster.yaml --kubeconfig=C:\Users\{user}\.kube\config"
-			   sh "kubectl apply -f deployment.yaml"
-			   sh "kubectl apply -f service.yaml"
+	    sh "kubectl apply -f deployment.yaml"
+	    sh "kubectl apply -f service.yaml"
         }
       }
     }  
